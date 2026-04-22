@@ -3,7 +3,7 @@ import torchvision
 from torchvision import transforms
 from torchvision.datasets import ImageFolder
 from torch.utils.data import DataLoader
-from torch import nn
+import torch.nn as nn
 
 transform = transforms.Compose([
     transforms.Resize((224,224)),
@@ -26,6 +26,8 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.0001)
 for epoch in range(5):
 
     total_loss = 0
+    correct = 0
+    total = 0
 
     for images, labels in loader:
 
@@ -38,8 +40,15 @@ for epoch in range(5):
 
         total_loss += loss.item()
 
-    print(f"Epoch {epoch+1} Loss {total_loss}")
+        # Accuracy calculation
+        _, predicted = torch.max(outputs, 1)
+        correct += (predicted == labels).sum().item()
+        total += labels.size(0)
+
+    accuracy = 100 * correct / total
+
+    print(f"Epoch {epoch+1} Loss: {total_loss:.2f} Accuracy: {accuracy:.2f}%")
 
 torch.save(model.state_dict(),"models/mood_model.pth")
 
-print("✅ Model Training Complete")
+print(" Model Training Complete")

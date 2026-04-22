@@ -35,4 +35,4 @@ for frame in os.listdir(frame_folder):
 
 final_mood = Counter(predictions).most_common(1)[0][0]
 
-print("🎬 Final Scene Mood:", final_mood)
+print(" Final Scene Mood:", final_mood)
