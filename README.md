@@ -37,8 +37,13 @@ python predict_mood.py
 
 ## Results
 
-(Add screenshots or output examples here)
+![Training Result](result.png)
+
+## Demo  
 
 ## Demo
 
-(Add deployed link if available)
+This project can be tested locally by running:
+
+python train_model.py  
+python predict_mood.py
