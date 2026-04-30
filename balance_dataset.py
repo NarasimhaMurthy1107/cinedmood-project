@@ -17,4 +17,4 @@ for mood in os.listdir(dataset_path):
         for img in remove:
             os.remove(os.path.join(folder, img))
 
-print("✅ Dataset Balanced Successfully")
+print("Dataset Balanced Successfully")
