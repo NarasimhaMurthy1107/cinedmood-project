@@ -1,4 +1,4 @@
-# Cinemood - Mood-Based Video Classification
+# Movie Scene Mood Classification - Mood-Based Video Classification
 
 ## Overview
 
